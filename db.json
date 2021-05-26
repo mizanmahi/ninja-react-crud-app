@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "userId": 7,
+      "id": 1,
+      "title": "sunt aut facere repellat providen derit",
+      "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "eum et est occaecati",
+      "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+    },
+    {
+      "userId": "19320002",
+      "title": "fdf",
+      "body": "",
+      "id": 7
+    },
+    {
+      "userId": "19320002",
+      "title": "A great freedom fighter",
+      "body": "He can fight for anything but not for love",
+      "id": 8
+    }
+  ]
+}
