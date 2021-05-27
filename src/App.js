@@ -1,38 +1,44 @@
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-
 import "./App.css";
-import Nav from "./components/nav";
-import Homepage from "./components/homepage";
-import CreateForm from "./components/create-form";
-import PostDetails from "./components/post-details";
+import Counter from "./components/counter";
+import React, { createContext, useReducer } from "react";
+import Fetch from "./components/fetch";
+
+export const themeContext = createContext();
+const initialState = {
+   user: null,
+   ispending: true,
+   error: null
+};
+
+const reducer = (state, action) => {
+   switch (action.type) {
+      case "fetch_success":
+         return {
+            user: action.payload,
+            ispending: false,
+         };
+      case "fetch_error":
+         return {
+            user: null,
+            ispending: false,
+            error: action.payload
+         };
+      default:
+         return state;
+   }
+};
 
 function App() {
+   const [state, dispatch] = useReducer(reducer, initialState);
+
    return (
-      <Router>
+      <themeContext.Provider value={{state, dispatch}}>
          <div className="App">
-            <Nav />
-            <Switch>
-               <Route exact path="/">
-                  <Homepage />
-               </Route>
-               <Route exact path="/create">
-                  <CreateForm />
-               </Route>
-               <Route exact path="/post/:id">
-                  <PostDetails/>
-               </Route>
-               <Route exact path="*">
-                  <h1 style={{
-                    textAlign: "center",
-                  }} className="text-danger">Sorry that page can not be found!</h1>
-                  <Link className="btn btn-primary" style={{
-                    display: "block",
-                    margin: "0 auto"
-                  }} to="/">Go Home</Link>
-               </Route>
-            </Switch>
+            {/* <Counter /> */}
+            <Fetch/>
          </div>
-      </Router>
+         ;
+      </themeContext.Provider>
    );
 }
 
