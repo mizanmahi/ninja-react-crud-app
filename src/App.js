@@ -1,45 +1,41 @@
+import { connect } from "react-redux";
+
+import { increaseCounter, decreaseCount } from "./redux/counter-action";
+
 import "./App.css";
-import Counter from "./components/counter";
-import React, { createContext, useReducer } from "react";
-import Fetch from "./components/fetch";
 
-export const themeContext = createContext();
-const initialState = {
-   user: null,
-   ispending: true,
-   error: null
-};
+import { increament } from "./redux/counter-sagas";
 
-const reducer = (state, action) => {
-   switch (action.type) {
-      case "fetch_success":
-         return {
-            user: action.payload,
-            ispending: false,
-         };
-      case "fetch_error":
-         return {
-            user: null,
-            ispending: false,
-            error: action.payload
-         };
-      default:
-         return state;
-   }
-};
-
-function App() {
-   const [state, dispatch] = useReducer(reducer, initialState);
-
+function App(props) {
+   const { increaseCount, decreaseCount } = props;
    return (
-      <themeContext.Provider value={{state, dispatch}}>
-         <div className="App">
-            {/* <Counter /> */}
-            <Fetch/>
+      <div className="App">
+         <div className="container">
+            <div className="counter">
+               <span>Count Is {props.count}</span>
+            </div>
+            <button type="button" onClick={increaseCount}>
+               Increase
+            </button>
+            <button type="button" onClick={() => decreaseCount()}>
+               Decrease
+            </button>
          </div>
-         ;
-      </themeContext.Provider>
+      </div>
    );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+   return {
+      count: state.counter.count,
+   };
+};
+
+const mapDispatchToProps = (dispatch) => {
+   return {
+      increaseCount: () => dispatch(increaseCounter()),
+      decreaseCount: () => dispatch(decreaseCount()),
+   };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
