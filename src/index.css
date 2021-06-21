@@ -18,3 +18,28 @@
 html {
   box-sizing: border-box;
 }
+
+.count {
+   width: 40%;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 1rem;
+}
+
+.counter {
+   grid-column: 1 / -1;
+}
+
+.btn {
+   outline: none;
+   border: none;
+   padding: .9rem 1.5rem;
+   background: var(--color-secondary);
+   color: #fff;
+}
+
+.btn:hover {
+   background: var(--color-primary);
+   color: #fff;
+}
