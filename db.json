@@ -1,22 +1,16 @@
 {
   "posts": [
     {
-      "userId": 1,
-      "id": 4,
-      "title": "eum et est occaecati",
-      "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
-    },
-    {
-      "userId": "19320002",
-      "title": "fdf",
-      "body": "",
-      "id": 7
-    },
-    {
       "userId": "19320002",
       "title": "Mizanur Rahman",
       "body": "jr js developer ",
       "id": 8
+    },
+    {
+      "userId": "19320002",
+      "title": "df",
+      "body": "dfads",
+      "id": 9
     }
   ]
 }
