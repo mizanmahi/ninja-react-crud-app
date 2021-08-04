@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
-import { CounterContext } from "../App";
+import { CounterContext } from '../context/CounterContext';
 
-function HoverCounter() {
+function Counter() {
   const context = useContext(CounterContext);
   return (
     <div>
@@ -11,4 +11,4 @@ function HoverCounter() {
   );
 }
 
-export default HoverCounter;
+export default Counter;

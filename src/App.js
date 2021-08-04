@@ -1,17 +1,20 @@
-import React, { createContext } from "react";
-import HoverCounter from "./comps/HoverCounter";
+import React from "react";
+import Counter from "./comps/Counter";
+import CounterClass from "./comps/CounterClass";
+
+// context
+import { CounterContext } from "./context/CounterContext";
 
 import "./App.css";
-
-export const CounterContext = createContext();
 
 
 function App() {
   return (
-    <CounterContext.Provider value={{counter: 900}}>
+    <CounterContext.Provider value={{ counter: 5000 }}>
       <div className="App">
         <h2>Hello World</h2>
-        <HoverCounter />
+        <Counter />
+        <CounterClass />
       </div>
     </CounterContext.Provider>
   );
