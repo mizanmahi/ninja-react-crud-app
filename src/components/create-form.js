@@ -29,7 +29,7 @@ const CreateForm = () => {
          inputVal.body.trim().length < 1
       ) return;
          axios
-            .post("http://localhost:4000/posts", inputVal)
+            .post("http://localhost:3004/posts", inputVal)
             .then((res) => {
                console.log("New Blog Added!");
                history.push("/");

@@ -9,10 +9,10 @@ const PostDetails = () => {
    const {
       data: post,
       isPending,
-   } = useFetch(`http://localhost:4000/posts/${id}`);
+   } = useFetch(`http://localhost:3004/posts/${id}`);
 
    const deleteHandler = () =>  {
-      axios.delete(`http://localhost:4000/posts/${id}`).then(res => {
+      axios.delete(`http://localhost:3004/posts/${id}`).then(res => {
          console.log("Post was deleted with the id of ", id);
          history.push("/")
       })

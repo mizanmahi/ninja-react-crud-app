@@ -3,7 +3,7 @@ import PostList from './post-lists';
 import useFetch from './useFetch';
 
 const Homepage = () => {
-   const {data, error, isPending} = useFetch("http://localhost:4000/posts");
+   const {data, error, isPending} = useFetch("http://localhost:3004/posts");
     return ( 
         <div className="homepage">
             <h2 style={{
