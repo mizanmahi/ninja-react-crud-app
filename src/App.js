@@ -1,13 +1,10 @@
-import LayoutComponentOne from "./components/LayoutComponent";
-import LayoutComponentTwo from "./components/LayoutComponentTwo";
-
-import "./App.css";
+import Form from './components/Form';
+import './App.css';
 
 function App() {
    return (
-      <div className="App">
-         <LayoutComponentOne />
-         <LayoutComponentTwo />
+      <div className='App'>
+         <Form />
       </div>
    );
 }
