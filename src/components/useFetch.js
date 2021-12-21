@@ -20,7 +20,7 @@ const useFetch = (url) => {
             .catch((err) => {
                if (axios.isCancel(err)) {
                   // chcecking if request was cancelled or not
-                  console.log("Request was cencelled", err);
+                  console.log("Request was cancelled", err);
                } else {
                   setError(err);
                   setPending(false);
@@ -30,7 +30,7 @@ const useFetch = (url) => {
 
       return () => {
          // cancelling axios request when the dom is unmounted
-         console.log("Celean up function ran");
+         console.log("Clean up function ran");
          source.cancel();
       };
    }, [url]);
